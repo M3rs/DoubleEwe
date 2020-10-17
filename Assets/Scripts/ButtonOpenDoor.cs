@@ -25,6 +25,8 @@ public class ButtonOpenDoor : MonoBehaviour
 
         var c = Door.GetComponent<BoxCollider2D>();
         c.enabled = false;
+
+        Debug.Log("Door Open");
     }
 
     void OnTriggerExit2D(Collider2D collision)

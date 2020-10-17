@@ -20,11 +20,13 @@ public class PitTrap : MonoBehaviour
     {
         var r = GetComponent<SpriteRenderer>();
         r.enabled = true;
+        Debug.Log("Pit trap on");
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
         var r = GetComponent<SpriteRenderer>();
         r.enabled = false;
+        Debug.Log("Pit trap off");
     }
 }

@@ -44,37 +44,6 @@ public class RecordMovement : MonoBehaviour
 
     }
 
-    /*
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (clone) {
-            return;
-        }
-        if (!active) {
-            return;
-        }
-
-        if (collision.gameObject.tag == "trap") {
-
-            Debug.Log("Trigger!" + collision.gameObject.tag + " " + collision.gameObject.name);
-            player.position = positions[0];
-            var x = Instantiate(SheepClone, positions[0], Quaternion.identity);
-
-            var ai = x.GetComponent<AISheepMovement>();
-            ai.Positions = positions.ToArray();
-            ai.AI = x.transform;
-
-            positions.Clear();
-
-            active = false;
-
-            Bah.Play();
-
-            //collision.enabled = false;
-        }
-    }
-    */
-    
     void OnTriggerStay2D(Collider2D collision)
     {
 

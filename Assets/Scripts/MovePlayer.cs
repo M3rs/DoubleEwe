@@ -7,6 +7,12 @@ using UnityEngine;
 public class MovePlayer : MonoBehaviour
 {
     public float Speed;
+
+    public Sprite Forward;
+    public Sprite Back;
+    public Sprite Left;
+    public Sprite Right;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,21 +26,29 @@ public class MovePlayer : MonoBehaviour
         {
             var x = 1 * Speed * Time.deltaTime;
             transform.position += new Vector3(x, 0, 0);
+            var r = GetComponent<SpriteRenderer>();
+            r.sprite = Right;
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             var x = -1 * Speed *Time.deltaTime;
             transform.position += new Vector3(x, 0, 0);
+            var r = GetComponent<SpriteRenderer>();
+            r.sprite = Left;
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
             var y = -1 * Speed * Time.deltaTime;
             transform.position += new Vector3(0, y, 0);
+            var r = GetComponent<SpriteRenderer>();
+            r.sprite = Back;
         }
         if (Input.GetKey(KeyCode.UpArrow))
         {
             var y = 1 * Speed * Time.deltaTime;
             transform.position += new Vector3(0, y, 0);
+            var r = GetComponent<SpriteRenderer>();
+            r.sprite = Forward;
         }
 
         
