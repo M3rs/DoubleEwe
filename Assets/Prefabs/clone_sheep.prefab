@@ -100,6 +100,8 @@ MonoBehaviour:
   AI: {fileID: 0}
   Positions: []
   Bah: {fileID: 1658459233865935711}
+  WoolEmitter: {fileID: 2229099590823902336, guid: 6fa4f69012cf6564cb8e9232560a9622,
+    type: 3}
 --- !u!61 &1658459233865935708
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -13,6 +13,8 @@ public class MovePlayer : MonoBehaviour
     public Sprite Left;
     public Sprite Right;
 
+    public bool Enabled = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,10 @@ public class MovePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!Enabled) {
+            return;
+        }
+        
         if (Input.GetKey(KeyCode.RightArrow))
         {
             var x = 1 * Speed * Time.deltaTime;
