@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class MovePlayer : MonoBehaviour
 {
+    public float Speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,23 +18,23 @@ public class MovePlayer : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            var speed = 1 * Time.deltaTime;
-            transform.position += new Vector3(speed, 0, 0);
+            var x = 1 * Speed * Time.deltaTime;
+            transform.position += new Vector3(x, 0, 0);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            var speed = -1 * Time.deltaTime;
-            transform.position += new Vector3(speed, 0, 0);
+            var x = -1 * Speed *Time.deltaTime;
+            transform.position += new Vector3(x, 0, 0);
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            var speed = -1 * Time.deltaTime;
-            transform.position += new Vector3(0, speed, 0);
+            var y = -1 * Speed * Time.deltaTime;
+            transform.position += new Vector3(0, y, 0);
         }
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            var speed = 1 * Time.deltaTime;
-            transform.position += new Vector3(0, speed, 0);
+            var y = 1 * Speed * Time.deltaTime;
+            transform.position += new Vector3(0, y, 0);
         }
 
         
@@ -46,4 +47,10 @@ public class MovePlayer : MonoBehaviour
             }
         }
     }
+
+    //private void OnTriggerStay2D(Collider2D collision)
+    //{
+    //Do something
+        //Debug.Log("Trigger!" + collision.gameObject.tag);
+    //}
 }
