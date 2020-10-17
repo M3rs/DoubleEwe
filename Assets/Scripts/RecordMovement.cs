@@ -58,6 +58,8 @@ public class RecordMovement : MonoBehaviour
         var r = x.GetComponent<RecordMovement>();
         r.clone = true;
         Destroy(r);
+        var move = x.GetComponent<MovePlayer>();
+        Destroy(move);
         var ai = x.AddComponent<AISheepMovement>();
         ai.Positions = positions.ToArray();
         ai.AI = x.transform;
