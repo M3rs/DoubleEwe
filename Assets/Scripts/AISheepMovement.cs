@@ -8,6 +8,8 @@ public class AISheepMovement : MonoBehaviour
     public Vector3[] Positions;
     int index;
 
+    public AudioSource Bah;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,5 +28,19 @@ public class AISheepMovement : MonoBehaviour
             AI.position = Positions[index];
             index++;
         }
+    }
+
+    
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag != "trap") {
+            return;
+        }
+
+        Debug.Log("Trigger! " + collision.gameObject.tag);
+
+        Bah.Play();
+
+        collision.enabled = false;
     }
 }

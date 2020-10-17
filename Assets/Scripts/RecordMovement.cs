@@ -12,10 +12,12 @@ public class RecordMovement : MonoBehaviour
     public Transform AI;
     public bool recording = true;
     public bool clone = false;
+    public GameObject SheepClone;
 
     public AudioSource Bah;
 
     private bool active;
+    //rivate Collider
 
     // Start is called before the first frame update
     void Start()
@@ -41,9 +43,10 @@ public class RecordMovement : MonoBehaviour
         } else {
 
         }
+
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
         if (clone) {
             return;
@@ -52,15 +55,15 @@ public class RecordMovement : MonoBehaviour
             return;
         }
 
+        if (collision.gameObject.tag != "trap") {
+            return;
+        }
+
         Debug.Log("Trigger!" + collision.gameObject.tag);
         player.position = positions[0];
-        var x = Instantiate(player.gameObject, positions[0], Quaternion.identity);
-        var r = x.GetComponent<RecordMovement>();
-        r.clone = true;
-        Destroy(r);
-        var move = x.GetComponent<MovePlayer>();
-        Destroy(move);
-        var ai = x.AddComponent<AISheepMovement>();
+        var x = Instantiate(SheepClone, positions[0], Quaternion.identity);
+
+        var ai = x.GetComponent<AISheepMovement>();
         ai.Positions = positions.ToArray();
         ai.AI = x.transform;
 
@@ -69,10 +72,17 @@ public class RecordMovement : MonoBehaviour
         active = false;
 
         Bah.Play();
+
+        collision.enabled = false;
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
+        if (collision.gameObject.tag != "trap") {
+            return;
+        }
         active = true;
+        collision.enabled = true;
+        Debug.Log("exit");
     }
 }
