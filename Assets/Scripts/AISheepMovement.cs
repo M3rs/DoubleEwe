@@ -9,6 +9,7 @@ public class AISheepMovement : MonoBehaviour
     int index;
 
     public AudioSource Bah;
+    public GameObject WoolEmitter;
 
     // Start is called before the first frame update
     void Start()
@@ -50,5 +51,10 @@ public class AISheepMovement : MonoBehaviour
 
         var c = GetComponent<BoxCollider2D>();
         c.enabled = false;
+
+        var parts = WoolEmitter.GetComponentsInChildren<ParticleSystem>();
+        foreach (var part in parts) {
+            part.Play();
+        }
     }
 }
