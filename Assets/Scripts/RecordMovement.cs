@@ -6,7 +6,6 @@ public class RecordMovement : MonoBehaviour
 {
     List<GameObject> otherSheep;
     List<Vector3> positions;
-    int index;
 
     public Transform player;
     public Transform AI;
@@ -24,7 +23,6 @@ public class RecordMovement : MonoBehaviour
     {
         otherSheep = new List<GameObject>();
         positions = new List<Vector3>();
-        index = 0;
 
         active = true;
     }
@@ -46,7 +44,8 @@ public class RecordMovement : MonoBehaviour
 
     }
 
-    void OnTriggerStay2D(Collider2D collision)
+    /*
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (clone) {
             return;
@@ -55,25 +54,55 @@ public class RecordMovement : MonoBehaviour
             return;
         }
 
-        if (collision.gameObject.tag != "trap") {
+        if (collision.gameObject.tag == "trap") {
+
+            Debug.Log("Trigger!" + collision.gameObject.tag + " " + collision.gameObject.name);
+            player.position = positions[0];
+            var x = Instantiate(SheepClone, positions[0], Quaternion.identity);
+
+            var ai = x.GetComponent<AISheepMovement>();
+            ai.Positions = positions.ToArray();
+            ai.AI = x.transform;
+
+            positions.Clear();
+
+            active = false;
+
+            Bah.Play();
+
+            //collision.enabled = false;
+        }
+    }
+    */
+    
+    void OnTriggerStay2D(Collider2D collision)
+    {
+
+        if (clone) {
+            return;
+        }
+        if (!active) {
             return;
         }
 
-        Debug.Log("Trigger!" + collision.gameObject.tag);
-        player.position = positions[0];
-        var x = Instantiate(SheepClone, positions[0], Quaternion.identity);
+        if (collision.gameObject.tag == "trap") {
 
-        var ai = x.GetComponent<AISheepMovement>();
-        ai.Positions = positions.ToArray();
-        ai.AI = x.transform;
+            Debug.Log("Trigger!" + collision.gameObject.tag + " " + collision.gameObject.name);
+            player.position = positions[0];
+            var x = Instantiate(SheepClone, positions[0], Quaternion.identity);
 
-        positions.Clear();
+            var ai = x.GetComponent<AISheepMovement>();
+            ai.Positions = positions.ToArray();
+            ai.AI = x.transform;
 
-        active = false;
+            positions.Clear();
 
-        Bah.Play();
+            active = false;
 
-        collision.enabled = false;
+            Bah.Play();
+
+            collision.enabled = false;
+        }
     }
 
     void OnTriggerExit2D(Collider2D collision)
@@ -81,6 +110,7 @@ public class RecordMovement : MonoBehaviour
         if (collision.gameObject.tag != "trap") {
             return;
         }
+
         active = true;
         collision.enabled = true;
         Debug.Log("exit");

@@ -41,6 +41,11 @@ public class AISheepMovement : MonoBehaviour
 
         Bah.Play();
 
+        var p = collision.gameObject.GetComponent<PersistentTrap>();
+        if (p != null) {
+            return;
+        }
+
         collision.enabled = false;
     }
 }
