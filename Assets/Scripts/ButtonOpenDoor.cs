@@ -5,6 +5,10 @@ using UnityEngine;
 public class ButtonOpenDoor : MonoBehaviour
 {
     public GameObject Door;
+
+    public Sprite UpSprite;
+    public Sprite DownSprite;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +31,9 @@ public class ButtonOpenDoor : MonoBehaviour
         c.enabled = false;
 
         Debug.Log("Door Open");
+
+        var br = GetComponent<SpriteRenderer>();
+        br.sprite = DownSprite;
     }
 
     void OnTriggerExit2D(Collider2D collision)
@@ -36,5 +43,8 @@ public class ButtonOpenDoor : MonoBehaviour
 
         var c = Door.GetComponent<BoxCollider2D>();
         c.enabled = true;       
+
+        var br = GetComponent<SpriteRenderer>();
+        br.sprite = UpSprite;
     }
 }

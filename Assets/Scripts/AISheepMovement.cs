@@ -47,5 +47,8 @@ public class AISheepMovement : MonoBehaviour
         }
 
         collision.enabled = false;
+
+        var c = GetComponent<BoxCollider2D>();
+        c.enabled = false;
     }
 }

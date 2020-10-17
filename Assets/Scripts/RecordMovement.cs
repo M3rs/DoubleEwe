@@ -16,7 +16,6 @@ public class RecordMovement : MonoBehaviour
     public AudioSource Bah;
 
     private bool active;
-    //rivate Collider
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +29,7 @@ public class RecordMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void FixedUpdate()
