@@ -765,6 +765,7 @@ MonoBehaviour:
   Back: {fileID: 21300000, guid: 29ee5cb183261ed448105b8cf0ecc884, type: 3}
   Left: {fileID: 21300000, guid: 5beeb259eb7b6484290d2adf5e6c7688, type: 3}
   Right: {fileID: 21300000, guid: 71b454dde1b449f448f178b122b7c63e, type: 3}
+  Enabled: 1
 --- !u!61 &426110947
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -810,6 +811,7 @@ MonoBehaviour:
   SheepClone: {fileID: 1658459233865935705, guid: e7ee85b1c70ee9e4da9a8c9350ca4199,
     type: 3}
   Bah: {fileID: 426110950}
+  WoolEmitter: {fileID: 0}
 --- !u!50 &426110949
 Rigidbody2D:
   serializedVersion: 4
@@ -963,7 +965,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: AllIn1SpriteShader/AllIn1SpriteShader
   m_Shader: {fileID: 4800000, guid: a36b7719ff0465b42ab1407d67672c5f, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA FADE_ON
+  m_ShaderKeywords: DOODLE_ON ETC1_EXTERNAL_ALPHA FADE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -1056,8 +1058,8 @@ Material:
     - _GrassWind: 20
     - _GreyscaleLuminosity: 0
     - _GreyscaleOutline: 0
-    - _HandDrawnAmount: 10
-    - _HandDrawnSpeed: 5
+    - _HandDrawnAmount: 13.3
+    - _HandDrawnSpeed: 4.75
     - _HitEffectBlend: 1
     - _HitEffectGlow: 5
     - _HologramMaxAlpha: 1
@@ -2871,7 +2873,7 @@ SpriteRenderer:
   m_Size: {x: 0.59, y: 0.72}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1208114101
@@ -3009,6 +3011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 860c6984753d9ab4bb2404f5aef8d00d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpikeSound: {fileID: 0}
 --- !u!1 &1577865036
 GameObject:
   m_ObjectHideFlags: 0
@@ -3561,6 +3564,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Door: {fileID: 1686944461}
+  UpSprite: {fileID: 0}
+  DownSprite: {fileID: 0}
+  ButtonSfx: {fileID: 0}
+  DoorSfx: {fileID: 0}
 --- !u!212 &1864870791
 SpriteRenderer:
   m_ObjectHideFlags: 0
