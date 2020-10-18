@@ -9,6 +9,9 @@ public class ButtonOpenDoor : MonoBehaviour
     public Sprite UpSprite;
     public Sprite DownSprite;
 
+    public AudioSource ButtonSfx;
+    public AudioSource DoorSfx;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +37,9 @@ public class ButtonOpenDoor : MonoBehaviour
 
         var br = GetComponent<SpriteRenderer>();
         br.sprite = DownSprite;
+
+        ButtonSfx.Play();
+        DoorSfx.Play();
     }
 
     void OnTriggerExit2D(Collider2D collision)
@@ -46,5 +52,8 @@ public class ButtonOpenDoor : MonoBehaviour
 
         var br = GetComponent<SpriteRenderer>();
         br.sprite = UpSprite;
+        
+        ButtonSfx.Play();
+        DoorSfx.Play();
     }
 }

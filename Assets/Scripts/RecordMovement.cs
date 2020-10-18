@@ -63,6 +63,7 @@ public class RecordMovement : MonoBehaviour
             collision.enabled = false;
             active = false;
 
+/*
             Debug.Log(WoolEmitter.name);
 
             foreach (ParticleSystem ps in WoolEmitter.transform.GetComponentsInChildren<ParticleSystem>()) {
@@ -72,6 +73,7 @@ public class RecordMovement : MonoBehaviour
                 ps.Play();
                 Debug.Log(ps.name);
             }
+            */
 
             
             var mp = GetComponent<MovePlayer>();

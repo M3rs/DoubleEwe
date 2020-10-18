@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PitTrap : MonoBehaviour
 {
+    public AudioSource SpikeSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class PitTrap : MonoBehaviour
         var r = GetComponent<SpriteRenderer>();
         r.enabled = true;
         Debug.Log("Pit trap on");
+        SpikeSound.Play();
     }
 
     void OnTriggerExit2D(Collider2D collision)
