@@ -11,6 +11,12 @@ public class AISheepMovement : MonoBehaviour
     public AudioSource Bah;
     public GameObject WoolEmitter;
 
+    
+    public Sprite Forward;
+    public Sprite Back;
+    public Sprite Left;
+    public Sprite Right;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,14 +26,30 @@ public class AISheepMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void FixedUpdate()
     {
         if (index < Positions.Length) {
+            var lastPos = AI.position;
             AI.position = Positions[index];
             index++;
+            
+            var n = Vector3.Normalize(AI.position - lastPos);
+            var r = GetComponent<SpriteRenderer>();
+            if (n.x == 1) {
+                r.sprite = Right;
+            }
+            if (n.x == -1) {
+                r.sprite = Left;
+            }
+            if (n.y == 1) {
+                r.sprite = Forward;
+            }
+            if (n.y == -1) {
+                r.sprite = Back;
+            }
         }
     }
 
@@ -52,9 +74,10 @@ public class AISheepMovement : MonoBehaviour
         var c = GetComponent<BoxCollider2D>();
         c.enabled = false;
 
-        var parts = WoolEmitter.GetComponentsInChildren<ParticleSystem>();
-        foreach (var part in parts) {
-            part.Play();
+        foreach (ParticleSystem ps in WoolEmitter.transform.GetComponentsInChildren<ParticleSystem>()) {
+            var wer = ps.GetComponent<ParticleSystemRenderer>();
+            ps.time = 0;
+            ps.Play();
         }
     }
 }

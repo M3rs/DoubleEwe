@@ -63,17 +63,15 @@ public class RecordMovement : MonoBehaviour
             collision.enabled = false;
             active = false;
 
-/*
+
             Debug.Log(WoolEmitter.name);
 
             foreach (ParticleSystem ps in WoolEmitter.transform.GetComponentsInChildren<ParticleSystem>()) {
                 var wer = ps.GetComponent<ParticleSystemRenderer>();
-                wer.sortingLayerName = "Sheep";
-                wer.sortingOrder = 101;
+                ps.time = 0;
                 ps.Play();
-                Debug.Log(ps.name);
             }
-            */
+            
 
             
             var mp = GetComponent<MovePlayer>();
@@ -82,19 +80,6 @@ public class RecordMovement : MonoBehaviour
             }
 
             StartCoroutine(Respawn(collision));
-            /*
-            player.position = positions[0];
-            var x = Instantiate(SheepClone, positions[0], Quaternion.identity);
-
-            var ai = x.GetComponent<AISheepMovement>();
-            ai.Positions = positions.ToArray();
-            ai.AI = x.transform;
-
-            positions.Clear();
-
-
-
-            */
         }
     }
 
@@ -102,26 +87,19 @@ public class RecordMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
 
+        foreach (ParticleSystem ps in WoolEmitter.transform.GetComponentsInChildren<ParticleSystem>()) {
+            var wer = ps.GetComponent<ParticleSystemRenderer>();
+            ps.Stop();
+        }
+
         player.position = positions[0];
         var x = Instantiate(SheepClone, positions[0], Quaternion.identity);
-
-/*
-        var mp = GetComponent<MovePlayer>();
-        if (mp != null) {
-            mp.Enabled = false;
-        }
-        */
 
         var ai = x.GetComponent<AISheepMovement>();
         ai.Positions = positions.ToArray();
         ai.AI = x.transform;
 
         positions.Clear();
-
-        //active = false;
-
-
-        //collision.enabled = false;
     
     }
 
