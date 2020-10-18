@@ -56,6 +56,11 @@ public class MovePlayer : MonoBehaviour
             var r = GetComponent<SpriteRenderer>();
             r.sprite = Forward;
         }
+        
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
 
         
         if (Input.GetKeyUp(KeyCode.Space))

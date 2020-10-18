@@ -25,10 +25,12 @@ public class PitTrap : MonoBehaviour
         SpikeSound.Play();
     }
 
+/*
     void OnTriggerExit2D(Collider2D collision)
     {
         var r = GetComponent<SpriteRenderer>();
         r.enabled = false;
         Debug.Log("Pit trap off");
     }
+    */
 }
