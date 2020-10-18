@@ -14,8 +14,14 @@ public class VictoryScreen : MonoBehaviour
     void Update()
     {
         if (Input.anyKey) {
-            Application.Quit();
+            StartCoroutine(WaitAndQuitGame());
         }
         
+    }
+
+    IEnumerator WaitAndQuitGame()
+    {
+        yield return new WaitForSeconds(2);
+        Application.Quit();
     }
 }
