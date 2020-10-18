@@ -101,6 +101,8 @@ MonoBehaviour:
   DownSprite: {fileID: 21300000, guid: 63e9ca1df9af5ee4980a6d41670fd245, type: 3}
   ButtonSfx: {fileID: 3736004146602761430}
   DoorSfx: {fileID: 0}
+  DoorOpenSprite: {fileID: 21300000, guid: e077f99c411c16e49bb105717f8ad2ed, type: 3}
+  DoorClosedSprite: {fileID: 21300000, guid: 79958e5940e782746a47e065a8e067f2, type: 3}
 --- !u!61 &3736004146602761429
 BoxCollider2D:
   m_ObjectHideFlags: 0

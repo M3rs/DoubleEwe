@@ -12,6 +12,9 @@ public class ButtonOpenDoor : MonoBehaviour
     public AudioSource ButtonSfx;
     public AudioSource DoorSfx;
 
+    public Sprite DoorOpenSprite;
+    public Sprite DoorClosedSprite;    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +31,7 @@ public class ButtonOpenDoor : MonoBehaviour
     void OnTriggerStay2D(Collider2D collision)
     {
         var r = Door.GetComponent<SpriteRenderer>();
-        r.enabled = false;
+        r.sprite = DoorOpenSprite;
 
         var c = Door.GetComponent<BoxCollider2D>();
         c.enabled = false;
@@ -44,15 +47,16 @@ public class ButtonOpenDoor : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision)
     {
-         var r = Door.GetComponent<SpriteRenderer>();
-        r.enabled = true;
+        var r = Door.GetComponent<SpriteRenderer>();
+        r.sprite = DoorClosedSprite;
+
 
         var c = Door.GetComponent<BoxCollider2D>();
         c.enabled = true;       
 
         var br = GetComponent<SpriteRenderer>();
         br.sprite = UpSprite;
-        
+
         ButtonSfx.Play();
         DoorSfx.Play();
     }
