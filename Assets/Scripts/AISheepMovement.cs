@@ -17,10 +17,15 @@ public class AISheepMovement : MonoBehaviour
     public Sprite Left;
     public Sprite Right;
 
+    public Sprite Dead;
+
+    bool alive;
+
     // Start is called before the first frame update
     void Start()
     {
         index = 0;
+        alive = true;
     }
 
     // Update is called once per frame
@@ -50,12 +55,19 @@ public class AISheepMovement : MonoBehaviour
             if (n.y == -1) {
                 r.sprite = Back;
             }
+
+            if (!alive) {
+                r.sprite = Dead;
+            }
         }
     }
 
     
     void OnTriggerStay2D(Collider2D collision)
     {
+        if (!alive) {
+            return;
+        }
         if (collision.gameObject.tag != "trap") {
             return;
         }
@@ -63,6 +75,7 @@ public class AISheepMovement : MonoBehaviour
         Debug.Log("Trigger! " + collision.gameObject.tag);
 
         Bah.Play();
+        alive = false;
 
         var p = collision.gameObject.GetComponent<PersistentTrap>();
         if (p != null) {
@@ -79,5 +92,6 @@ public class AISheepMovement : MonoBehaviour
             ps.time = 0;
             ps.Play();
         }
+
     }
 }

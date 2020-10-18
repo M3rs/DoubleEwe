@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class ExitGrass : MonoBehaviour
 {
     public AudioSource Bah;
+    public string NextLevel;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,7 @@ public class ExitGrass : MonoBehaviour
         if (collision.gameObject.tag != "Player") {
             return;
         }
-        
+
         Debug.Log("Exit Grass");
         StartCoroutine(ToVictory());
     }
@@ -33,7 +34,7 @@ public class ExitGrass : MonoBehaviour
         Bah.Play();
         yield return new WaitForSeconds(1);
 
-        SceneManager.LoadScene("VictoryScene");
+        SceneManager.LoadScene(NextLevel);
 
     }
 }
