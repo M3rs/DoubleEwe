@@ -19,6 +19,10 @@ public class PitTrap : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collision)
     {
+        if (collision.gameObject.tag == "trap") {
+            return;
+        }
+
         var r = GetComponent<SpriteRenderer>();
         r.enabled = true;
         Debug.Log("Pit trap on");
