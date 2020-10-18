@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/TestLab 3.unity
     guid: da75944ceaa6c1f4e842621e20cd6b01
   - enabled: 1
+    path: Assets/TestLab 4.unity
+    guid: cadacd57064a7e1438056fca6513732e
+  - enabled: 1
     path: Assets/VictoryScene.unity
     guid: c1e2822b23d8afb4f9c70560356470b7
   m_configObjects: {}
