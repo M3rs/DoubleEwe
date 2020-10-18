@@ -1239,6 +1239,11 @@ PrefabInstance:
       propertyPath: HitSfx
       value: 
       objectReference: {fileID: 1269261162}
+    - target: {fileID: 6808505806041070120, guid: db06021ef0c44ae438299b0a166382d6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 95f8205bae02eed4286d92b8965b1ac9, type: 2}
     - target: {fileID: 6808505806041070166, guid: db06021ef0c44ae438299b0a166382d6,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -1328,6 +1333,11 @@ PrefabInstance:
       propertyPath: HitSfx
       value: 
       objectReference: {fileID: 726140514}
+    - target: {fileID: 6808505806041070120, guid: db06021ef0c44ae438299b0a166382d6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 95f8205bae02eed4286d92b8965b1ac9, type: 2}
     - target: {fileID: 6808505806041070166, guid: db06021ef0c44ae438299b0a166382d6,
         type: 3}
       propertyPath: m_LocalScale.y
