@@ -74,7 +74,7 @@ public class AISheepMovement : MonoBehaviour
             return;
         }
 
-        Debug.Log("Trigger! " + collision.gameObject.tag);
+        //Debug.Log("Trigger! " + collision.gameObject.tag);
 
         Bah.Play();
         alive = false;

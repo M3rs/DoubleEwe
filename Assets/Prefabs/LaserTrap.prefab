@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 340310013065017217}
   - component: {fileID: 340310013065017231}
   - component: {fileID: 8331993512396850101}
+  - component: {fileID: -4460344677282899796}
   m_Layer: 0
   m_Name: LaserTrap
   m_TagString: trap
@@ -158,6 +159,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationVelocity: 30
+--- !u!114 &-4460344677282899796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340310013065017218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1994c810bfef1914ca478668c94bd342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrapType: 1
 --- !u!1001 &340310013366420889
 PrefabInstance:
   m_ObjectHideFlags: 0

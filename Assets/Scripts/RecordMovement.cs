@@ -63,6 +63,23 @@ public class RecordMovement : MonoBehaviour
             collision.enabled = false;
             active = false;
 
+            var move = GetComponent<MovePlayer>();
+            move.Speed = 0;
+
+            var tt = collision.gameObject.GetComponent<TrapMetadata>();
+            if (tt != null) {
+                var animator = GetComponent<Animator>();
+                if (tt.TrapType == TrapTypes.Laser) {
+                    animator.SetTrigger("BurnSheep");
+
+                }
+
+            }
+            if (collision.gameObject.GetComponent<MovingFireball>() != null) {
+                var animator = GetComponent<Animator>();
+                animator.SetTrigger("BurnSheep");
+            }
+
 
             Debug.Log(WoolEmitter.name);
 
@@ -86,6 +103,8 @@ public class RecordMovement : MonoBehaviour
     IEnumerator Respawn(Collider2D collision)
     {
         yield return new WaitForSeconds(1);
+        var move = GetComponent<MovePlayer>();
+        move.Speed = move.OriginalSpeed;
 
         foreach (ParticleSystem ps in WoolEmitter.transform.GetComponentsInChildren<ParticleSystem>()) {
             var wer = ps.GetComponent<ParticleSystemRenderer>();
@@ -116,6 +135,6 @@ public class RecordMovement : MonoBehaviour
 
         active = true;
         collision.enabled = true;
-        Debug.Log("exit");
+        //Debug.Log("exit");
     }
 }
