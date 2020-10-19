@@ -65,9 +65,11 @@ public class AISheepMovement : MonoBehaviour
     
     void OnTriggerStay2D(Collider2D collision)
     {
+        /*
         if (!alive) {
             return;
         }
+        */
         if (collision.gameObject.tag != "trap") {
             return;
         }
@@ -87,11 +89,13 @@ public class AISheepMovement : MonoBehaviour
         var c = GetComponent<BoxCollider2D>();
         c.enabled = false;
 
+
         foreach (ParticleSystem ps in WoolEmitter.transform.GetComponentsInChildren<ParticleSystem>()) {
             var wer = ps.GetComponent<ParticleSystemRenderer>();
             ps.time = 0;
             ps.Play();
         }
+
 
     }
 }

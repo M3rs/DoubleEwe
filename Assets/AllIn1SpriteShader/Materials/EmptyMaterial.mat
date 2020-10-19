@@ -99,7 +99,7 @@ Material:
     - _GrassManualAnim: 1
     - _GrassManualToggle: 0
     - _GrassSpeed: 2
-    - _GrassWind: 20
+    - _GrassWind: 5.2
     - _GreyscaleLuminosity: 0
     - _GreyscaleOutline: 0
     - _HandDrawnAmount: 10

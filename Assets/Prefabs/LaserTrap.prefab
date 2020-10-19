@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 340310013065017230}
   - component: {fileID: 340310013065017217}
   - component: {fileID: 340310013065017231}
+  - component: {fileID: 8331993512396850101}
   m_Layer: 0
   m_Name: LaserTrap
   m_TagString: trap
@@ -98,7 +99,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5, y: 0}
+  m_Offset: {x: 0.8, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -109,7 +110,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.75, y: 0.1}
+  m_Size: {x: 1.6, y: 0.1}
   m_EdgeRadius: 0
 --- !u!50 &340310013065017217
 Rigidbody2D:
@@ -144,6 +145,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 081af35e78c187143b6822f11c6894a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8331993512396850101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340310013065017218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fed28affb1b6cc84b91fd866164d8d06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotationVelocity: 30
 --- !u!1001 &340310013366420889
 PrefabInstance:
   m_ObjectHideFlags: 0

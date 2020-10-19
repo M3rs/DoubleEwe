@@ -22,6 +22,9 @@ public class PitTrap : MonoBehaviour
         if (collision.gameObject.tag == "trap") {
             return;
         }
+        if (collision.gameObject.tag == "terrain") {
+            return;
+        }
 
         var r = GetComponent<SpriteRenderer>();
         r.enabled = true;

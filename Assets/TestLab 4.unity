@@ -136,7 +136,7 @@ PrefabInstance:
     - target: {fileID: 9202035023500415880, guid: 8051883b63702bc4199c60d59b45157a,
         type: 3}
       propertyPath: NextLevel
-      value: VictoryScene
+      value: TestLab 5
       objectReference: {fileID: 0}
     - target: {fileID: 9202035023500415881, guid: 8051883b63702bc4199c60d59b45157a,
         type: 3}
