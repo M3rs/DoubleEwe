@@ -175,8 +175,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3bb9d4320e1bfb94a83fb402ee76ae3f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.762
-  m_Pitch: 1
+  m_Volume: 0.302
+  m_Pitch: 1.24
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -188,7 +188,7 @@ AudioSource:
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
-  BypassListenerEffects: 0
+  BypassListenerEffects: 1
   BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2

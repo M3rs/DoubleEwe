@@ -19,6 +19,18 @@ public class IceyPatch : MonoBehaviour
         
     }
 
+    /*
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag != "Player") {
+            return;
+        }
+
+        var anim = collision.gameObject.GetComponent<Animator>();
+        anim.SetTrigger("Spin");
+    }
+    */
+    /*
     void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag != "Player") {
@@ -40,4 +52,5 @@ public class IceyPatch : MonoBehaviour
         var r = collision.gameObject.GetComponent<MovePlayer>();
         r.Speed = r.OriginalSpeed;
     }
+    */
 }
