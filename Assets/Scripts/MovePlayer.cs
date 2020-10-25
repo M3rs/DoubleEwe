@@ -16,7 +16,7 @@ public class MovePlayer : MonoBehaviour
 
     public bool Enabled = true;
 
-    Vector3 MoveDir;
+    public Vector3 MoveDir;
 
     // Start is called before the first frame update
     void Start()

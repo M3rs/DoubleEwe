@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class PitTrap : MonoBehaviour
 {
+    public bool Visible;
     public AudioSource SpikeSound;
     // Start is called before the first frame update
     void Start()
     {
         var r = GetComponent<SpriteRenderer>();
-        r.enabled = false;
+        r.enabled = Visible;
     }
 
     // Update is called once per frame

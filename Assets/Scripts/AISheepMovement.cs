@@ -95,6 +95,22 @@ public class AISheepMovement : MonoBehaviour
             ps.time = 0;
             ps.Play();
         }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag != "trap") {
+            return;
+        }
+        var p = collision.gameObject.GetComponent<PersistentTrap>();
+        if (p != null) {
+            return;
+        }
+
+        collision.enabled = true;
+
+        var c = GetComponent<BoxCollider2D>();
+        c.enabled = true;
 
 
     }
